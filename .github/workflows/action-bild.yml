@@ -34,7 +34,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file ./docker/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.TAG }}
     
-    - name: Push the Docker image
-      run: |
-        docker login --username ${{ secrets.USER_DOCKER_HUB }} --password ${{ secrets.MY_TOKEN_DOCKER_HUB }}
-        docker push ${{ env.IMAGE_NAME }}:${{ env.TAG }}
+    #- name: Push the Docker image
+      #run: |
+        #docker login --username ${{ secrets.USER_DOCKER_HUB }} --password ${{ secrets.MY_TOKEN_DOCKER_HUB }}
+        #docker push ${{ env.IMAGE_NAME }}:${{ env.TAG }}
