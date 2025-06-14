@@ -20,9 +20,9 @@ jobs:
 
       - name: Сборка Docker-образа
         run: |
-          docker build . --file Dockerfile --tag yaremko-test-nginx:v1
-          docker tag yaremko-test-nginx:v1 ${{ secrets.USER_DOCKER_HUB }}/yaremko-test-nginx:v1
+          docker build . --file Dockerfile --tag insommnia/yaremko-test-nginx:latest
+          insommnia/yaremko-test-nginx:latest ${{ secrets.USER_DOCKER_HUB }}/insommnia/yaremko-test-nginx:latest
 
       - name: Push Docker-образа в Docker Hub
         run: |
-          docker push ${{ secrets.USER_DOCKER_HUB }}/yaremko-test-nginx:v1
+          docker push ${{ secrets.USER_DOCKER_HUB }}/insommnia/yaremko-test-nginx:latest
